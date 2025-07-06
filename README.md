@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MonitoCorp - Live Service Monitoring Dashboard
 
 A modern, responsive SRE monitoring dashboard built with React, TypeScript, and Mock Service Worker (MSW). Features real-time service monitoring with a professional dark theme optimized for SRE environments.
@@ -259,3 +260,6 @@ The application uses MSW to simulate API responses. The service worker is config
 ## License
 
 MIT
+=======
+# service_monitoring_dashboard-
+>>>>>>> f3ebc7d43c00b6d510063be289c7f25e9690da35
