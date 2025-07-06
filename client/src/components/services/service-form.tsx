@@ -37,7 +37,7 @@ export function ServiceForm({
     resolver: zodResolver(schema),
     defaultValues: {
       name: editingService?.name || '',
-      type: editingService?.type || '',
+      type: editingService?.type || undefined,
       description: editingService?.description || '',
       healthCheckUrl: editingService?.healthCheckUrl || '',
     },
@@ -107,11 +107,11 @@ export function ServiceForm({
                 <SelectValue placeholder="Select service type" />
               </SelectTrigger>
               <SelectContent className="bg-gray-800 border-gray-700">
-                {Object.values(ServiceType).map((type) => (
-                  <SelectItem key={type} value={type} className="text-white">
-                    {type}
-                  </SelectItem>
-                ))}
+                <SelectItem value="API" className="text-white">API</SelectItem>
+                <SelectItem value="Database" className="text-white">Database</SelectItem>
+                <SelectItem value="Cache" className="text-white">Cache</SelectItem>
+                <SelectItem value="External" className="text-white">External</SelectItem>
+                <SelectItem value="Queue" className="text-white">Queue</SelectItem>
               </SelectContent>
             </Select>
             {form.formState.errors.type && (

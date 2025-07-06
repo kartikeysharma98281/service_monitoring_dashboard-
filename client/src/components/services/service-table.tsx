@@ -21,7 +21,7 @@ export function ServiceTable({ onServiceSelect }: ServiceTableProps) {
   const [, navigate] = useLocation();
   const [currentPage, setCurrentPage] = useState(1);
   const [searchQuery, setSearchQuery] = useState('');
-  const [statusFilter, setStatusFilter] = useState('');
+  const [statusFilter, setStatusFilter] = useState('all');
   const [showForm, setShowForm] = useState(false);
   const [editingService, setEditingService] = useState<Service | undefined>();
   const { toast } = useToast();
@@ -39,7 +39,7 @@ export function ServiceTable({ onServiceSelect }: ServiceTableProps) {
   } = useServices({
     page: currentPage,
     limit: 10,
-    status: statusFilter,
+    status: statusFilter === 'all' ? '' : statusFilter,
     nameFilter: searchQuery,
   });
 
@@ -166,7 +166,7 @@ export function ServiceTable({ onServiceSelect }: ServiceTableProps) {
                   <SelectValue placeholder="All Statuses" />
                 </SelectTrigger>
                 <SelectContent className="bg-gray-800 border-gray-700">
-                  <SelectItem value="" className="text-white">All Statuses</SelectItem>
+                  <SelectItem value="all" className="text-white">All Statuses</SelectItem>
                   {Object.values(ServiceStatus).map((status) => (
                     <SelectItem key={status} value={status} className="text-white">
                       {status}
