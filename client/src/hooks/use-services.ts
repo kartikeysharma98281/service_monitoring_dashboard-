@@ -38,9 +38,9 @@ export function useServices(filters: ServicesFilters = {}) {
       const response = await apiRequest('GET', `/api/services?${params}`);
       return response.json() as Promise<ServicesResponse>;
     },
-    refetchInterval: 15000, // Poll every 15 seconds
+    refetchInterval: 15000,
     refetchOnWindowFocus: isVisible,
-    staleTime: 10000, // Consider data stale after 10 seconds
+    staleTime: 10000,
   });
 
   const createMutation = useMutation({
@@ -101,7 +101,7 @@ export function useServiceStats() {
         offline: number;
       }>;
     },
-    refetchInterval: 15000, // Poll every 15 seconds
+    refetchInterval: 15000,
     refetchOnWindowFocus: isVisible,
     staleTime: 10000,
   });

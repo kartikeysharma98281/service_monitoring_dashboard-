@@ -185,7 +185,6 @@ export function getFilteredServices(
   return { services, total };
 }
 
-// Simulate status changes for live updates
 export function simulateStatusUpdates(): void {
   setInterval(() => {
     const service = mockServices[Math.floor(Math.random() * mockServices.length)];
@@ -197,7 +196,6 @@ export function simulateStatusUpdates(): void {
       service.lastCheck = new Date();
       service.updatedAt = new Date();
       
-      // Add event for status change
       const newEvent: ServiceEvent = {
         id: eventIdCounter++,
         serviceId: service.id,
@@ -208,5 +206,5 @@ export function simulateStatusUpdates(): void {
       };
       mockServiceEvents.unshift(newEvent);
     }
-  }, 30000); // Update every 30 seconds
+  }, 30000);
 }

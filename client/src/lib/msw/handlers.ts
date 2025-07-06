@@ -11,20 +11,16 @@ import {
 
 const API_BASE = '/api';
 
-// Helper function to simulate network delay and random failures
 async function simulateNetworkConditions() {
-  // Random delay between 300ms and 1000ms
   const delayTime = Math.floor(Math.random() * 700) + 300;
   await delay(delayTime);
   
-  // 5% chance of failure
   if (Math.random() < 0.05) {
     throw new Error('Network error');
   }
 }
 
 export const handlers = [
-  // GET /api/services - List services with pagination and filtering
   http.get(`${API_BASE}/services`, async ({ request }) => {
     try {
       await simulateNetworkConditions();
@@ -52,7 +48,6 @@ export const handlers = [
     }
   }),
 
-  // GET /api/services/:id - Get single service
   http.get(`${API_BASE}/services/:id`, async ({ params }) => {
     try {
       await simulateNetworkConditions();
@@ -76,7 +71,6 @@ export const handlers = [
     }
   }),
 
-  // POST /api/services - Create new service
   http.post(`${API_BASE}/services`, async ({ request }) => {
     try {
       await simulateNetworkConditions();
@@ -100,7 +94,6 @@ export const handlers = [
     }
   }),
 
-  // PUT /api/services/:id - Update service
   http.put(`${API_BASE}/services/:id`, async ({ params, request }) => {
     try {
       await simulateNetworkConditions();
@@ -126,7 +119,6 @@ export const handlers = [
     }
   }),
 
-  // DELETE /api/services/:id - Delete service
   http.delete(`${API_BASE}/services/:id`, async ({ params }) => {
     try {
       await simulateNetworkConditions();
@@ -150,7 +142,6 @@ export const handlers = [
     }
   }),
 
-  // GET /api/services/:id/events - Get service events with pagination
   http.get(`${API_BASE}/services/:id/events`, async ({ params, request }) => {
     try {
       await simulateNetworkConditions();
@@ -184,7 +175,6 @@ export const handlers = [
     }
   }),
 
-  // GET /api/stats - Get dashboard statistics
   http.get(`${API_BASE}/stats`, async () => {
     try {
       await simulateNetworkConditions();

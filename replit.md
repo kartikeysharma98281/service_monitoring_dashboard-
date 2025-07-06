@@ -97,6 +97,9 @@ MonitoCorp is a modern, responsive SRE monitoring dashboard built with React and
 ```
 Changelog:
 - July 06, 2025. Initial setup
+- January 06, 2025. Converted to MSW-only implementation with comprehensive API endpoints
+- January 06, 2025. Removed useIsMobile functionality and cleaned up all comments
+- January 06, 2025. Created comprehensive GitHub README with API documentation
 ```
 
 ## User Preferences
