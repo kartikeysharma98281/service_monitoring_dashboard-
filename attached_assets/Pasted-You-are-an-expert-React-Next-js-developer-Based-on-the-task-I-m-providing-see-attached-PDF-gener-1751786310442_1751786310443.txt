@@ -1,0 +1,71 @@
+You are an expert React/Next.js developer. Based on the task I'm providing (see attached PDF), generate a clean, production-level project structure and starter code for the following technical test:
+
+Project Overview:
+Build a responsive, modern internal dashboard for "MonitoCorp" SRE team to monitor microservices health. The dashboard must feel live and professional with up-to-date information without manual refreshes.
+
+Requirements to follow strictly:
+
+Framework: Use React with Next.js
+
+API Backend: Do NOT build a real backend. Instead:
+
+Use msw (Mock Service Worker) to simulate API calls
+
+Simulate realistic network delays (300ms - 1000ms)
+
+Simulate ~5% random API failures to test error handling
+
+Styling: Use Tailwind CSS for clean, production-quality UI
+
+State Management: Your choice, but prioritize caching, optimistic updates, and background updates (React Query recommended)
+
+Core Features:
+
+Dashboard with service list table showing name, type, and status with icons or badges
+
+Poll live status updates every 15 seconds without reloading full page
+
+Optimistic Add/Edit/Delete operations via modal or form
+
+Smooth navigation to Service Details page with infinite scroll for historical events
+
+Filter services by status and search by name
+
+Refresh data when browser tab becomes active
+
+Loading skeletons and error handling for realistic UI feedback
+
+Mock API Endpoints to Simulate:
+
+GET /api/services with pagination ?page=1&limit=10 and filters ?status=Online, ?name_like=user
+
+GET /api/services/:id
+
+POST /api/services (payload: { name, type }, returns service with id, default status)
+
+PUT /api/services/:id (update name, type)
+
+DELETE /api/services/:id
+
+GET /api/services/:id/events with pagination ?page=1&limit=20
+
+Deliverables:
+
+Full project folder structure based on Next.js conventions
+
+mocks/handlers.js file with simulated API logic
+
+mocks/browser.js to initialize MSW
+
+Reusable components for services table, badges, modals, loaders
+
+React hooks to manage service list, details, events with caching and polling
+
+Infinite scroll logic for historical events
+
+Filter/search functionality for the dashboard
+
+Example README.md explaining architecture and how to run the project
+
+Please generate clean, readable, modular code respecting best practices. The final project must demonstrate a high level of UI polish suitable for production.
+
