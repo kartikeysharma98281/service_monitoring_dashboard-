@@ -1,5 +1,5 @@
 import { useInfiniteQuery } from '@tanstack/react-query';
-import { ServiceEvent } from '@shared/schema';
+import { ServiceEvent } from '@/lib/msw/data';
 import { apiRequest } from '@/lib/queryClient';
 
 interface EventsResponse {

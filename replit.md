@@ -18,10 +18,10 @@ MonitoCorp is a modern, responsive SRE monitoring dashboard built with React and
 - **Simulated Network Conditions**: Random delays (300-1000ms) and 5% failure rate
 - **In-Memory Data Storage** for development and testing
 
-### Database Design
-- **Drizzle ORM** with PostgreSQL schema definitions
-- **Tables**: Services and ServiceEvents with proper relationships
-- **Prepared for Production**: Database configuration ready for PostgreSQL deployment
+### Data Management
+- **In-memory Mock Data**: All data stored in memory for development and testing
+- **TypeScript Interfaces**: Simple type definitions in MSW data file
+- **No Database Dependencies**: Completely frontend-focused implementation without schema files
 
 ## Key Components
 
@@ -100,6 +100,7 @@ Changelog:
 - January 06, 2025. Converted to MSW-only implementation with comprehensive API endpoints
 - January 06, 2025. Removed useIsMobile functionality and cleaned up all comments
 - January 06, 2025. Created comprehensive GitHub README with API documentation
+- January 06, 2025. Removed shared schema and all database functionality, moved to pure frontend implementation
 ```
 
 ## User Preferences

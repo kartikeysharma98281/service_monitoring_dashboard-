@@ -1,4 +1,4 @@
-import { ServiceStatus } from '@shared/schema';
+import { ServiceStatus } from '@/lib/msw/data';
 import { cn } from '@/lib/utils';
 
 interface StatusBadgeProps {

@@ -1,4 +1,4 @@
-import { ServiceType } from '@shared/schema';
+import { ServiceType } from '@/lib/msw/data';
 import { 
   Server, 
   Database, 

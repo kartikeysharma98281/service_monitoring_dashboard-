@@ -1,4 +1,44 @@
-import { Service, ServiceEvent, ServiceStatus, ServiceType, EventType } from "@shared/schema";
+export interface Service {
+  id: number;
+  name: string;
+  type: string;
+  description: string;
+  status: string;
+  healthCheckUrl: string;
+  lastCheck: Date;
+  createdAt: Date;
+  updatedAt: Date;
+}
+
+export interface ServiceEvent {
+  id: number;
+  serviceId: number;
+  title: string;
+  description: string;
+  eventType: string;
+  timestamp: Date;
+}
+
+export const ServiceStatus = {
+  ONLINE: "Online",
+  OFFLINE: "Offline",
+  DEGRADED: "Degraded",
+} as const;
+
+export const ServiceType = {
+  API: "API",
+  DATABASE: "Database",
+  CACHE: "Cache",
+  EXTERNAL: "External",
+  QUEUE: "Queue",
+} as const;
+
+export const EventType = {
+  STATUS_CHANGE: "STATUS_CHANGE",
+  ALERT: "ALERT",
+  MAINTENANCE: "MAINTENANCE",
+  RECOVERY: "RECOVERY",
+} as const;
 
 let serviceIdCounter = 1;
 let eventIdCounter = 1;

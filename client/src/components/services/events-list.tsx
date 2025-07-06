@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { useServiceEvents } from '@/hooks/use-service-events';
-import { EventType } from '@shared/schema';
+import { EventType } from '@/lib/msw/data';
 import { CheckCircle, AlertTriangle, Wrench, AlertCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Skeleton } from '@/components/ui/loading-skeleton';

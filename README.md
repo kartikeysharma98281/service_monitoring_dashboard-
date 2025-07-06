@@ -212,8 +212,6 @@ Get dashboard statistics.
 │   │   ├── pages/          # Page components
 │   │   └── main.tsx        # Application entry point
 │   └── public/             # Static assets
-├── shared/
-│   └── schema.ts           # Shared type definitions
 └── server/                 # Backend files (legacy)
 ```
 

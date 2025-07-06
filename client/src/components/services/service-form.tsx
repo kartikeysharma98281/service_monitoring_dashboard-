@@ -1,9 +1,7 @@
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { insertServiceSchema, updateServiceSchema, ServiceType } from '@shared/schema';
-import { Service } from '@shared/schema';
-import { z } from 'zod';
+import { Service, ServiceType } from '@/lib/msw/data';
+import { InsertService } from '@/hooks/use-services';
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -13,12 +11,12 @@ import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { X, Check } from 'lucide-react';
 
-type FormData = z.infer<typeof insertServiceSchema>;
+type FormData = InsertService;
 
 interface ServiceFormProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (data: FormData) => Promise<void>;
+  onSubmit: (data: InsertService) => Promise<void>;
   editingService?: Service;
   isLoading?: boolean;
 }
@@ -31,13 +29,11 @@ export function ServiceForm({
   isLoading = false
 }: ServiceFormProps) {
   const { toast } = useToast();
-  const schema = editingService ? updateServiceSchema : insertServiceSchema;
   
   const form = useForm<FormData>({
-    resolver: zodResolver(schema),
     defaultValues: {
       name: editingService?.name || '',
-      type: editingService?.type || undefined,
+      type: editingService?.type || '',
       description: editingService?.description || '',
       healthCheckUrl: editingService?.healthCheckUrl || '',
     },

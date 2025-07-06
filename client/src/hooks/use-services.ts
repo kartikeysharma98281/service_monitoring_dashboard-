@@ -1,7 +1,21 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { useVisibility } from './use-visibility';
-import { Service, InsertService, UpdateService } from '@shared/schema';
+import { Service } from '@/lib/msw/data';
 import { apiRequest } from '@/lib/queryClient';
+
+export interface InsertService {
+  name: string;
+  type: string;
+  description: string;
+  healthCheckUrl: string;
+}
+
+export interface UpdateService {
+  name?: string;
+  type?: string;
+  description?: string;
+  healthCheckUrl?: string;
+}
 
 interface ServicesResponse {
   services: Service[];

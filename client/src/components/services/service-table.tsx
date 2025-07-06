@@ -9,7 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { useToast } from '@/hooks/use-toast';
-import { Service, ServiceStatus } from '@shared/schema';
+import { Service, ServiceStatus } from '@/lib/msw/data';
 import { Plus, Search, Edit2, Trash2, ChevronLeft, ChevronRight } from 'lucide-react';
 import { useLocation } from 'wouter';
 
